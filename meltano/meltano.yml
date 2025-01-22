@@ -1,0 +1,21 @@
+version: 1
+plugins:
+  extractors:
+    - name: tap-csv
+      variant: singer-io
+      pip_url: singer-tap-csv
+    - name: tap-postgres
+      variant: singer-io
+      pip_url: pipelinewise-tap-postgres
+  loaders:
+    - name: target-postgres
+      variant: singer-io
+      pip_url: pipelinewise-target-postgres
+  transformers: []
+  orchestrators: []
+  utilities: []
+environments:
+  - name: default
+    orchestrators: []
+    variables: {}
+default_environment: default
