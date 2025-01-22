@@ -1,7 +1,27 @@
 import subprocess
+import psycopg2
+from dotenv import load_dotenv
+import os
+
+# Carregar variáveis de ambiente do arquivo .env
+load_dotenv()
 
 # Caminho dos scripts
 SCRIPTS_DIR = "./scripts"
+
+# Configurar conexão com o banco de dados
+try:
+    conn = psycopg2.connect(
+        database=os.getenv("POSTGRES_DB"),
+        user=os.getenv("POSTGRES_USER"),
+        password=os.getenv("POSTGRES_PASSWORD"),
+        host=os.getenv("POSTGRES_HOST"),
+        port=os.getenv("POSTGRES_PORT")
+    )
+    print("Conexão com o PostgreSQL estabelecida com sucesso!")
+except psycopg2.OperationalError as e:
+    print(f"Erro ao conectar ao PostgreSQL: {e}")
+    exit()
 
 # Executar etapas
 print("1. Extraindo dados do PostgreSQL...")

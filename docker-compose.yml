@@ -4,7 +4,7 @@ services:
     image: apache/airflow:2.6.0
     environment:
       - AIRFLOW__CORE__EXECUTOR=LocalExecutor
-      - AIRFLOW__CORE__SQL_ALCHEMY_CONN=postgresql+psycopg2://{user}:{password}@postgres:5432/airflow
+      - AIRFLOW__CORE__SQL_ALCHEMY_CONN=postgresql+psycopg2://admin:senha123@postgres:5432/northwind
     volumes:
       - ./dags:/opt/airflow/dags
     ports:
@@ -12,10 +12,9 @@ services:
 
 services:
   postgres:
-    image: postgres:15
     environment:
-      POSTGRES_USER: admin                # Nome do usuário
-      POSTGRES_PASSWORD: senha123         # Senha
-      POSTGRES_DB: northwind              # Nome do banco
+      POSTGRES_USER: admin                
+      POSTGRES_PASSWORD: senha123         
+      POSTGRES_DB: northwind              
     ports:
       - "5432:5432"
