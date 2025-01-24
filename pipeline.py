@@ -32,3 +32,11 @@ subprocess.run(["python", f"{SCRIPTS_DIR}/extract_csv.py"])
 
 print("3. Carregando dados no PostgreSQL...")
 subprocess.run(["python", f"{SCRIPTS_DIR}/load_to_postgres.py"])
+
+conn = psycopg2.connect(
+    database="northwind",
+    user="postgres",  # Verifique se o usuário é correto
+    password="123456",  # Senha correta
+    host="localhost",  # Host corrigido
+    port="5432"
+)

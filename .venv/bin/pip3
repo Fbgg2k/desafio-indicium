@@ -1,4 +1,4 @@
-#!/media/bfelipef/ssd_240/_ps_indicium/desafio/desafio-indicium/.venv/bin/python3
+#!/media/bfelipef/ssd_240/_ps_indicium/desafio/desafio-indicium/.venv/bin/python3.10
 # -*- coding: utf-8 -*-
 import re
 import sys

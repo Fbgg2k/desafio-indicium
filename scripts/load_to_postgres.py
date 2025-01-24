@@ -1,12 +1,16 @@
 import psycopg2
+from dotenv import load_dotenv
 import os
 import json
 
+# Carregar variáveis de ambiente do arquivo .env
+load_dotenv()
+
 # Configurações de conexão
-HOST = "localhost"
-DATABASE = "northwind"
-USER = "postgres"
-PASSWORD = "123456"
+HOST = os.getenv("POSTGRES_HOST")
+DATABASE = os.getenv("POSTGRES_DB")
+USER = os.getenv("POSTGRES_USER")
+PASSWORD = os.getenv("POSTGRES_PASSWORD")
 
 # Tabelas para carregar
 TABLES = ["categories", "customers", "employees", "orders", "products", "regions", "shippers", "suppliers", "territories"]

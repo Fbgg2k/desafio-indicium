@@ -12,9 +12,10 @@ services:
 
 services:
   postgres:
+    image: postgres:15
     environment:
-      POSTGRES_USER: admin                
-      POSTGRES_PASSWORD: senha123         
-      POSTGRES_DB: northwind              
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: senha123
+      POSTGRES_DB: northwind
     ports:
-      - "5432:5432"
+      - "5432:5432"  # Expor a porta no host local

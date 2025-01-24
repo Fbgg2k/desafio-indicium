@@ -1,5 +1,6 @@
 apache-airflow
-pandas
+pandas>=1.4
 psycopg2-binary
 sqlalchemy
 meltano
+python-dotenv
